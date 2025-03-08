@@ -96,105 +96,17 @@
         AI
     </div>
     
-    <!-- <script>
-   
-        const loginBtn = document.getElementById('loginBtn');
-        const loginModal = document.getElementById('loginModal');
-        
-        loginBtn.addEventListener('click', function() {
-            loginModal.classList.toggle('show-login');
-        });
-        
-        window.addEventListener('click', function(event) {
-            if (event.target === loginModal) {
-                loginModal.classList.remove('show-login');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-          
-            const locationSets = [
-
-                [
-                    { image: 'netherlands.jpeg', title: 'Netherlands', alt: 'Netherlands' },
-                    { image: 'Alaska.jpeg', title: 'Alaska', alt: 'Alaska' },
-                    { image: 'Korea.jpeg', title: 'Korea', alt: 'Korea' }
-                ]
-            ];
-
-            const experienceSets = [
-               
-                [
-                    { image: 'bonfire.jpeg', title: 'Bonfire Party', alt: 'Bonfire Party - People gathered around campfire' },
-                    { image: 'Henna.jpeg', title: 'Henna Tattoo', alt: 'Henna Tattoo - Elephant design on hand' },
-                    { image: 'clothes.jpeg', title: 'Try Local clothes', alt: 'People wearing traditional clothing' }
-                ]
-            ];
-
-            const locationContainer = document.querySelector('.locations .cards-container');
-            const experienceContainer = document.querySelector('.experiences .cards-container');
-            const locationArrow = document.querySelector('.locations .nav-arrow');
-            const experienceArrow = document.querySelector('.experiences .nav-arrow');
-
-            let currentLocationSet = 0;
-            let currentExperienceSet = 0;
-
-
-            locationArrow.addEventListener('click', function() {
-
-                currentLocationSet = (currentLocationSet + 1) % locationSets.length;
-                
-                locationContainer.style.opacity = '0';
-                
-                setTimeout(() => {
-                    updateCarousel(locationContainer, locationSets[currentLocationSet]);
-                    locationContainer.style.opacity = '1';
-                }, 300);
-            });
-
-     
-            experienceArrow.addEventListener('click', function() {
-        
-                currentExperienceSet = (currentExperienceSet + 1) % experienceSets.length;
-                
-                experienceContainer.style.opacity = '0';
-                
-                setTimeout(() => {
-                    updateCarousel(experienceContainer, experienceSets[currentExperienceSet]);
-                    experienceContainer.style.opacity = '1';
-                }, 300);
-            });
-
-            function updateCarousel(container, items) {
-               
-                const cards = container.querySelectorAll('.card');
-             
-                cards.forEach((card, index) => {
-                    if (index < items.length) {
-                        const img = card.querySelector('img');
-                        const title = card.querySelector('.card-title');
-                        
-                        img.src = items[index].image;
-                        img.alt = items[index].alt;
-                        title.textContent = items[index].title;
-                    }
-                });
-            }
-        });
-    </script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    // Login functionality
+
     const loginBtn = document.getElementById('loginBtn');
     const loginModal = document.getElementById('loginModal');
     const closeModalBtn = document.createElement('button');
-    
-    // Add close button to modal
+   
     closeModalBtn.innerHTML = '&times;';
     closeModalBtn.classList.add('close-modal-btn');
     loginModal.prepend(closeModalBtn);
-    
-    // Login modal events
+   
     loginBtn.addEventListener('click', function() {
         loginModal.classList.toggle('show-login');
     });
@@ -458,7 +370,6 @@
             container.style.opacity = '1';
             updateActiveIndicator(indicators, index);
             
-            // Update current index
             if (type === 'location') {
                 currentLocationSet = index;
             } else {
